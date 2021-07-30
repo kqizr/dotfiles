@@ -192,7 +192,7 @@ exec nitrogen --restore &
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Compositor
-exec_always picom -b
+exec_always picom --experimental-backends &
 
 # Start Polkit
 exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
