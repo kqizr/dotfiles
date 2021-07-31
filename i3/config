@@ -195,10 +195,12 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always picom --experimental-backends &
 
 # Start Polkit
-exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
-# Scrot (Screenshot)
-bindsym $mod+y exec scrot ~/Pictures/%Y-%m-%d-%H-%M-%S.png --release
+# Screenshot
+exec --no-startup-id flameshot
+bindsym --release Print exec flameshot gui
+bindsym --release Shift+Print exec flameshot screen -c -d 2000
 
 # Removes Window Borders
 default_border none
